@@ -56,21 +56,22 @@
 // export default App
 
 //use state ka use
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 
-const App = () => {
-   const[count,setcount]= useState(0)
-  return (
-    <div>
-        <h1>{count}</h1>
-        <button onClick={()=>setcount(count+1)}>Increase</button>
-    </div>
-  )
-}
+// const App = () => {
+//    const[count,setcount]= useState(0)
+//   return (
+//     <div>
+//         <h1>{count}</h1>
+//         <button onClick={()=>setcount(count+1)}>Increase</button>
+//     </div>
+//   )
+// }
 
-export default App
+// export default App
 
 
+//2 example
 // import React, { useState } from 'react'
 
 // const App = () => {
@@ -84,3 +85,21 @@ export default App
 // }
 
 // export default App
+
+
+
+//event handling
+import React from 'react'
+
+const App = () => {
+    const handleClick = ()=>{
+        alert("Button clicked")
+    }
+  return (
+    <div>
+        <button onClick={ handleClick}>click me</button>
+    </div>
+  )
+}
+
+export default App
