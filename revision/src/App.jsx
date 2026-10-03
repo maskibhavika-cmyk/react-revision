@@ -42,33 +42,33 @@
 
 // export default App
 
-import React from 'react'
-import User from './User'
-
-const App = () => {
-  return (
-    <div>
-      <User email="bhavika@gmail.com" password ={121212}/>
-    </div>
-  )
-}
-
-export default App
-
-// use state ka use
-// import React, { useState } from 'react'
+// import React from 'react'
+// import User from './User'
 
 // const App = () => {
-//    const[count,setcount]= useState(0)
 //   return (
 //     <div>
-//         <h1>{count}</h1>
-//         <button onClick={()=>setcount(count+1)}>Increase</button>
+//       <User email="bhavika@gmail.com" password ={121212}/>
 //     </div>
 //   )
 // }
 
 // export default App
+
+//use state ka use
+import React, { useState } from 'react'
+
+const App = () => {
+   const[count,setcount]= useState(0)
+  return (
+    <div>
+        <h1>{count}</h1>
+        <button onClick={()=>setcount(count+1)}>Increase</button>
+    </div>
+  )
+}
+
+export default App
 
 
 // import React, { useState } from 'react'
