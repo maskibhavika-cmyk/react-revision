@@ -89,15 +89,34 @@
 
 
 //event handling
-import React from 'react'
+// import React from 'react'
+
+// const App = () => {
+//     const handleClick = ()=>{
+//         alert("Button clicked")
+//     }
+//   return (
+//     <div>
+//         <button onClick={ handleClick}>click me</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+//useState + onClick
+import React, { useState } from 'react'
 
 const App = () => {
-    const handleClick = ()=>{
-        alert("Button clicked")
-    }
+   const [name,setname] = useState("bhavika")
+   const changeName = () => {
+    setname("kangana")
+   }
   return (
     <div>
-        <button onClick={ handleClick}>click me</button>
+<h1>{name}</h1>
+<button onClick={changeName}>update name</button>
     </div>
   )
 }
