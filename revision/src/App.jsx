@@ -55,6 +55,21 @@
 
 // export default App
 
+// child props
+import React from 'react'
+import Card from './Card'
+
+const App = () => {
+  return (
+    <Card>
+        <h2>bhavika maski</h2>
+        <p>wlcome my profile</p>
+    </Card>
+  )
+}
+
+export default App
+
 //use state ka use
 // import React, { useState } from 'react'
 
@@ -75,11 +90,11 @@
 // import React, { useState } from 'react'
 
 // const App = () => {
-//    const[age,setage] = useState("22")
+//    const[age,setage] = useState(22)
 //   return (
 //     <div>
 // <h1>{age}</h1>
-// <button onClick={()=>setage("25")}>change age</button>
+// <button onClick={()=>setage(25)}>change age</button>
 //     </div>
 //   )
 // }
@@ -124,18 +139,21 @@
 // export default App
 
 // onchange + useState + input
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 
-const App = () => {
-   const [name, setname]= useState("")
-  return (
-    <div>
-<input type ="text"
-onChange={(e) => setname(e.target.value)}/>
-<h1>{name}</h1>
-    </div>
+// const App = () => {
+//    const [name, setname]= useState("")
+//   return (
+//     <div>
+// <input type ="text"
+// onChange={(e) => setname(e.target.value)}/>
+// <h1>{name}</h1>
+//     </div>
 
-  )
-}
+//   )
+// }
 
-export default App
+// export default App
+
+
+//
