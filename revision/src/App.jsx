@@ -28,32 +28,32 @@
 // export default App
 
 // props use
-import React from 'react'
-import User from './User'
-
-const App = () => {
-  return (
-    <div>
-    <User name = "bhavika" age ={50}/>
-  
-    </div>
-  )
-}
-
-export default App
-
 // import React from 'react'
 // import User from './User'
 
 // const App = () => {
 //   return (
 //     <div>
-//       <User email="bhavika@gmail.com" password ={121212}/>
+//     <User name = "bhavika" age ={50}/>
+  
 //     </div>
 //   )
 // }
 
 // export default App
+
+import React from 'react'
+import User from './User'
+
+const App = () => {
+  return (
+    <div>
+      <User email="bhavika@gmail.com" password ={121212}/>
+    </div>
+  )
+}
+
+export default App
 
 // use state ka use
 // import React, { useState } from 'react'
