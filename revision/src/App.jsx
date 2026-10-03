@@ -11,37 +11,36 @@
 
 
 //component use
-import React from 'react'
-import Header from './Header'
-const App = () => {
-  const name ="bhavika"
-  return (
-
-    <div>
-       <Header/>
-      <h1>hello {name}</h1>
-      <p>welcome my website</p>
-    </div>
-  
-  )
-}
-export default App
-
-
-// props use
 // import React from 'react'
-// import User from './User'
-
+// import Header from './Header'
 // const App = () => {
+//   const name ="bhavika"
 //   return (
+
 //     <div>
-//     <User name = "bhavika" age ={50}/>
-  
+//        <Header/>
+//       <h1>hello {name}</h1>
+//       <p>welcome my website</p>
 //     </div>
+  
 //   )
 // }
-
 // export default App
+
+// props use
+import React from 'react'
+import User from './User'
+
+const App = () => {
+  return (
+    <div>
+    <User name = "bhavika" age ={50}/>
+  
+    </div>
+  )
+}
+
+export default App
 
 // import React from 'react'
 // import User from './User'
