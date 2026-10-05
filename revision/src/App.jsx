@@ -163,19 +163,68 @@
 
 // controlled component
 
+// import React, { useState } from 'react'
+// const App = () => {
+//   const [name, setname] = useState("")
+
+//   return (
+//     <div>
+//       <h1>My Name:{name}</h1>
+//       <input
+//       type="text"
+//       value ={name}
+//       onChange={(e) =>setname(e.target.value)}
+//       placeholder = "Enter your name"
+//       ></input>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+//  Multiple Inputs Handling
 import React, { useState } from 'react'
+
 const App = () => {
-  const [name, setname] = useState("")
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: ""
+  })
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    })
+  }
 
   return (
     <div>
-      <h1>My Name:{name}</h1>
       <input
-      type="text"
-      value ={name}
-      onChange={(e) =>setname(e.target.value)}
-      placeholder = "Enter your name"
-      ></input>
+        name="name"
+        value={form.name}
+        onChange={handleChange}
+        placeholder="Enter name"
+      />
+
+      <input
+        name="email"
+        value={form.email}
+        onChange={handleChange}
+        placeholder="Enter email"
+      />
+
+      <input
+        name="password"
+        value={form.password}
+        onChange={handleChange}
+        placeholder="Enter password"
+      />
+
+      <h3>{form.name}</h3>
+      <h3>{form.email}</h3>
     </div>
   )
 }
