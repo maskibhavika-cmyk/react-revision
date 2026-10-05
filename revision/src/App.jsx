@@ -1,5 +1,7 @@
 // import React from 'react'
 
+// const { useState } = require("react");
+
 //  const App = () => {
 //   return (
 //     <div>
@@ -42,7 +44,7 @@
 
 // export default App
 
-// import React from 'react'
+// import  React  from 'react'
 // import User from './User'
 
 // const App = () => {
@@ -56,19 +58,19 @@
 // export default App
 
 // child props
-import React from 'react'
-import Card from './Card'
+// import React from 'react'
+// import Card from './Card'
 
-const App = () => {
-  return (
-    <Card>
-        <h2>bhavika maski</h2>
-        <p>wlcome my profile</p>
-    </Card>
-  )
-}
+// const App = () => {
+//   return (
+//     <Card>
+//         <h2>bhavika maski</h2>
+//         <p>wlcome my profile</p>
+//     </Card>
+//   )
+// }
 
-export default App
+// export  default  App
 
 //use state ka use
 // import React, { useState } from 'react'
@@ -156,4 +158,26 @@ export default App
 // export default App
 
 
-//
+//react + forms + onsubmit
+
+
+// controlled component
+
+import React, { useState } from 'react'
+const App = () => {
+  const [name, setname] = useState("")
+
+  return (
+    <div>
+      <h1>My Name:{name}</h1>
+      <input
+      type="text"
+      value ={name}
+      onChange={(e) =>setname(e.target.value)}
+      placeholder = "Enter your name"
+      ></input>
+    </div>
+  )
+}
+
+export default App
