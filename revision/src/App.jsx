@@ -233,22 +233,43 @@
 // export default App
 
 //  conditional rendering
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
+
+// const App = () => {
+//   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+//   return (
+//     <div>
+//       {isLoggedIn ? (
+//         <h1>Welcome Bhavika</h1>
+//       ) : (
+//         <h1>Please Login</h1>
+//       )}
+
+//       <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+//         Login / Logout
+//       </button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// List rendering + map()
+import React from 'react'
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  const users = ["divyanshi", "tanu", "mahi", "dhanshri"]
 
   return (
     <div>
-      {isLoggedIn ? (
-        <h1>Welcome Bhavika</h1>
-      ) : (
-        <h1>Please Login</h1>
-      )}
+      <h1>Users</h1>
 
-      <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
-        Login / Logout
-      </button>
+      {users.map((user) => (
+        <h3>{user}</h3>
+      ))}
     </div>
   )
 }
