@@ -184,47 +184,71 @@
 
 
 //  Multiple Inputs Handling
+// import React, { useState } from 'react'
+
+// const App = () => {
+//   const [form, setForm] = useState({
+//     name: "",
+//     email: "",
+//     password: ""
+//   })
+
+//   const handleChange = (e) => {
+//     setForm({
+//     ...form, //purani saari values ko copy kar dega
+//       [e.target.name]: e.target.value
+//     })
+//   }
+
+//   return (
+//     <div>
+//       <input
+//         name="name"
+//         value={form.name}
+//         onChange={handleChange}
+//         placeholder="Enter name"
+//       />
+
+//       <input
+//         name="email"
+//         value={form.email}
+//         onChange={handleChange}
+//         placeholder="Enter email"
+//       />
+
+//       <input
+//         name="password"
+//         value={form.password}
+//         onChange={handleChange}
+//         placeholder="Enter password"
+//       />
+
+//       <h3>{form.name}</h3>
+//       <h3>{form.email}</h3>
+//       <h3>{form.password}</h3>
+//     </div>
+//   )
+// }
+
+// export default App
+
+//  conditional rendering
 import React, { useState } from 'react'
 
 const App = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    password: ""
-  })
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    })
-  }
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   return (
     <div>
-      <input
-        name="name"
-        value={form.name}
-        onChange={handleChange}
-        placeholder="Enter name"
-      />
+      {isLoggedIn ? (
+        <h1>Welcome Bhavika</h1>
+      ) : (
+        <h1>Please Login</h1>
+      )}
 
-      <input
-        name="email"
-        value={form.email}
-        onChange={handleChange}
-        placeholder="Enter email"
-      />
-
-      <input
-        name="password"
-        value={form.password}
-        onChange={handleChange}
-        placeholder="Enter password"
-      />
-
-      <h3>{form.name}</h3>
-      <h3>{form.email}</h3>
+      <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+        Login / Logout
+      </button>
     </div>
   )
 }
