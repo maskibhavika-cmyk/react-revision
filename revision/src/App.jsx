@@ -419,36 +419,61 @@
 // export default App
 
 // loading + error
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 
-const App = () => {
-const [users,setUsers]=useState([])
-const [loading, setLoading] = useState(true)
-const [error, setError] = useState('')
+// const App = () => {
+// const [users,setUsers]=useState([])
+// const [loading, setLoading] = useState(true)
+// const [error, setError] = useState('')
 
-useEffect(()=> {
-  fetch('https://jsonplaceholder.typicode.com/users')
-  .then(()=>{
-   if (!response.ok) {
-          throw new Error('Something went wrong')
-        }
-    return response.json()
-      })
-      .then((data) => {
-        setUsers(data)
-        setLoading(false)
-      })
-      .catch((error) => {
-        setError(error.message)
-        setLoading(false)
-      })
-  }, [])
+// useEffect(()=> {
+//   fetch('https://jsonplaceholder.typicode.com/users')
+//   .then(()=>{
+//    if (!response.ok) {  //check karta hai ki request successful hui ya nahi.
+                           // Agar successful nahi hui → error throw hoga.
+//           throw new Error('Something went wrong')
+//         }
+//     return response.json()
+//       })
+//       .then((data) => {
+//         setUsers(data)
+//         setLoading(false)
+//       })
+//       .catch((error) => {
+//         setError(error.message)
+//         setLoading(false)
+//       })
+//   }, [])
 
-  return (
-    <div>
+//   return (
+//     <div>
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
-export default App
+// export default App
+
+//  React router
+ import React from 'react'
+ import { Routes, Route, Link } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+ 
+ const App = () => {
+
+   return (
+     <div>
+  <nav>
+<Link to ="/"> Home </Link>
+<Link to ="/about"> About </Link>
+  </nav>
+  <Routes>
+    <Route path="/" element={<Home/>} />
+    <Route path="/about" element={<About/>} />
+  </Routes>
+     </div>
+   )
+ }
+ 
+ export default App
