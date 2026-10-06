@@ -330,6 +330,7 @@
 // export default App
 
 //API Calling using fetch()
+
 // import React, { useEffect, useState } from 'react'
 
 // const App = () => {
@@ -353,20 +354,17 @@
 
 // export default App
 
-
-// Loading 
+// example 2
 import React, { useEffect, useState } from 'react'
 
 const App = () => {
   const [users, setUsers] = useState([])
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then((response) => response.json())
       .then((data) => {
         setUsers(data)
-        setLoading(false)
       })
   }, [])
 
@@ -374,15 +372,46 @@ const App = () => {
     <div>
       <h1>Users</h1>
 
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        users.map((user) => (
-          <h3 key={user.id}>{user.name}</h3>
-        ))
-      )}
+      {users.map((user) => (
+        <h3 key={user.id}>{user.name}</h3>
+      ))}
     </div>
   )
 }
 
 export default App
+
+// Loading 
+// import React, { useEffect, useState } from 'react'
+
+// const App = () => {
+//   const [users, setUsers] = useState([])
+//   const [loading, setLoading] = useState(true)
+
+//   useEffect(() => {
+//     fetch('https://jsonplaceholder.typicode.com/users')
+//       .then((response) => response.json())
+//       .then((data) => {
+//         setUsers(data)
+//         setLoading(false)
+//       })
+//   }, [])
+
+//   return (
+//     <div>
+//       <h1>Users</h1>
+
+//       {loading ? (
+//         <p>Loading...</p>
+//       ) : (
+//         users.map((user) => (
+//           <h3 key={user.id}>{user.name}</h3>
+//         ))
+//       )}
+//     </div>
+//   )
+// }
+
+// export default App
+
+// loading + error
