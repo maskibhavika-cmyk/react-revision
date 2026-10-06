@@ -312,17 +312,41 @@
 
 
 //dependency array of useEffect
+// import React, { useEffect, useState } from 'react'
+
+// const App = () => {
+//   const [count, setCount] = useState(0)
+//   useEffect(()=>{
+//     console.log("count changed:",count)
+//   },[count])
+//   return (
+//     <div>
+// <h1>Count:{count}</h1>
+// <button onClick={()=>setCount(count+1)}>Increase</button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+//API Calling using fetch()
 import React, { useEffect, useState } from 'react'
 
 const App = () => {
-  const [count, setCount] = useState(0)
-  useEffect(()=>{
-    console.log("count changed:",count)
-  },[count])
+const [jobs,setJobs] = useState([])
+useEffect(()=> {
+  fetch('http://localhost:8080/api/v1/jobs')
+  .then((response)=>response.JSON())
+  .then((data)=>{
+    setJobs(data)
+})
+},[])
   return (
     <div>
-<h1>Count:{count}</h1>
-<button onClick={()=>setCount(count+1)}>Increase</button>
+<h1>Jobs</h1>
+{jobs.map((job)=>(
+<h3 key ={job._id}>{job.title}</h3>
+))}
     </div>
   )
 }
