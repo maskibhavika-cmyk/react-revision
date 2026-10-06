@@ -316,6 +316,8 @@
 
 // const App = () => {
 //   const [count, setCount] = useState(0)
+
+
 //   useEffect(()=>{
 //     console.log("count changed:",count)
 //   },[count])
@@ -323,6 +325,8 @@
 //     <div>
 // <h1>Count:{count}</h1>
 // <button onClick={()=>setCount(count+1)}>Increase</button>
+// <button onClick={()=>setCount(count-1)}>Decrease</button>
+
 //     </div>
 //   )
 // }
@@ -355,31 +359,31 @@
 // export default App
 
 // example 2
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 
-const App = () => {
-  const [users, setUsers] = useState([])
+// const App = () => {
+//   const [users, setUsers] = useState([])
 
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((response) => response.json())
-      .then((data) => {
-        setUsers(data)
-      })
-  }, [])
+//   useEffect(() => {
+//     fetch('https://jsonplaceholder.typicode.com/users')
+//       .then((response) => response.json())
+//       .then((data) => {
+//         setUsers(data)
+//       })
+//   }, [])
 
-  return (
-    <div>
-      <h1>Users</h1>
+//   return (
+//     <div>
+//       <h1>Users</h1>
 
-      {users.map((user) => (
-        <h3 key={user.id}>{user.name}</h3>
-      ))}
-    </div>
-  )
-}
+//       {users.map((user) => (
+//         <h3 key={user.id}>{user.name}</h3>
+//       ))}
+//     </div>
+//   )
+// }
 
-export default App
+// export default App
 
 // Loading 
 // import React, { useEffect, useState } from 'react'
@@ -415,3 +419,36 @@ export default App
 // export default App
 
 // loading + error
+import React, { useEffect, useState } from 'react'
+
+const App = () => {
+const [users,setUsers]=useState([])
+const [loading, setLoading] = useState(true)
+const [error, setError] = useState('')
+
+useEffect(()=> {
+  fetch('https://jsonplaceholder.typicode.com/users')
+  .then(()=>{
+   if (!response.ok) {
+          throw new Error('Something went wrong')
+        }
+    return response.json()
+      })
+      .then((data) => {
+        setUsers(data)
+        setLoading(false)
+      })
+      .catch((error) => {
+        setError(error.message)
+        setLoading(false)
+      })
+  }, [])
+
+  return (
+    <div>
+
+    </div>
+  )
+}
+
+export default App
