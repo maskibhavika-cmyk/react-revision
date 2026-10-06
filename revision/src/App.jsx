@@ -257,21 +257,38 @@
 
 
 // List rendering + map()
-import React from 'react'
+// import React from 'react'
 
-const App = () => {
+// const App = () => {
 
-  const users = ["divyanshi", "tanu", "mahi", "dhanshri"]
+//   const users = ["divyanshi", "tanu", "mahi", "dhanshri"]
 
-  return (
-    <div>
-      <h1>Users</h1>
+//   return (
+//     <div>
+//       <h1>Users</h1>
 
-      {users.map((user) => (
-        <h3>{user}</h3>
-      ))}
-    </div>
-  )
-}
+//       {users.map((user) => (
+//         <h3>{user}</h3>
+//       ))}
+//     </div>
+//   )
+// }
 
-export default App
+// export default App
+
+//key prop
+ 
+ import React from 'react'  
+   const App = () => {
+    const user =["tanu","mahi","dhanshri","divya"]
+     return (
+       <div>
+        {user.map((user,index)=>(
+          <h3 key = {index}>{user}</h3>
+        ))}
+       </div>
+     )
+   }
+   
+   export default App
+
