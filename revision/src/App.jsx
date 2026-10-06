@@ -278,17 +278,34 @@
 
 //key prop
  
- import React from 'react'  
-   const App = () => {
-    const user =["tanu","mahi","dhanshri","divya"]
-     return (
-       <div>
-        {user.map((user,index)=>(
-          <h3 key = {index}>{user}</h3>
-        ))}
-       </div>
-     )
-   }
+//  import React from 'react'  
+//    const App = () => {
+//     const user =["tanu","mahi","dhanshri","divya"]
+//      return (
+//        <div>
+//         {user.map((user,index)=>(
+//           <h3 key = {index}>{user}</h3>
+//         ))}
+//        </div>
+//      )
+//    }
    
-   export default App
+//    export default App
 
+
+// useEffect
+import React, { useEffect } from 'react'
+
+const App = () => {
+useEffect(()=> {
+console.log("component is render")
+},[])//dependency array jo ki empty hai
+  return (
+    <div>
+<h1>kajal is a beautiful girl</h1>
+<h1> she is good girl</h1>
+    </div>
+  )
+}
+
+export default App
