@@ -294,16 +294,35 @@
 
 
 // useEffect
-import React, { useEffect } from 'react'
+// import React, { useEffect } from 'react'
+
+// const App = () => {
+// useEffect(()=> {
+// console.log("component is render")
+// },[])//dependency array jo ki empty hai
+//   return (
+//     <div>
+// <h1>kajal is a beautiful girl</h1>
+// <h1> she is good girl</h1>
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+//dependency array of useEffect
+import React, { useEffect, useState } from 'react'
 
 const App = () => {
-useEffect(()=> {
-console.log("component is render")
-},[])//dependency array jo ki empty hai
+  const [count, setCount] = useState(0)
+  useEffect(()=>{
+    console.log("count changed:",count)
+  },[count])
   return (
     <div>
-<h1>kajal is a beautiful girl</h1>
-<h1> she is good girl</h1>
+<h1>Count:{count}</h1>
+<button onClick={()=>setCount(count+1)}>Increase</button>
     </div>
   )
 }
