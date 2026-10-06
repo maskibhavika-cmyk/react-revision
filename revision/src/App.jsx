@@ -330,23 +330,57 @@
 // export default App
 
 //API Calling using fetch()
+// import React, { useEffect, useState } from 'react'
+
+// const App = () => {
+// const [jobs,setJobs] = useState([])
+// useEffect(()=> {
+//   fetch('http://localhost:8080/api/v1/jobs')
+//   .then((response)=>response.JSON())
+//   .then((data)=>{
+//     setJobs(data)
+// })
+// },[])
+//   return (
+//     <div>
+// <h1>Jobs</h1>
+// {jobs.map((job)=>(
+// <h3 key ={job._id}>{job.title}</h3>
+// ))}
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+// Loading 
 import React, { useEffect, useState } from 'react'
 
 const App = () => {
-const [jobs,setJobs] = useState([])
-useEffect(()=> {
-  fetch('http://localhost:8080/api/v1/jobs')
-  .then((response)=>response.JSON())
-  .then((data)=>{
-    setJobs(data)
-})
-},[])
+  const [users, setUsers] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((response) => response.json())
+      .then((data) => {
+        setUsers(data)
+        setLoading(false)
+      })
+  }, [])
+
   return (
     <div>
-<h1>Jobs</h1>
-{jobs.map((job)=>(
-<h3 key ={job._id}>{job.title}</h3>
-))}
+      <h1>Users</h1>
+
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        users.map((user) => (
+          <h3 key={user.id}>{user.name}</h3>
+        ))
+      )}
     </div>
   )
 }
