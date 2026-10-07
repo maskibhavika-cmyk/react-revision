@@ -479,22 +479,48 @@
 //  export default App
 
  // useNavigate
- import React from 'react'
- import { Routes, Route, Link } from 'react-router-dom'
-import Home from './pages/Home'
-import About from './pages/About'
+//  import React from 'react'
+//  import { Routes, Route, Link } from 'react-router-dom'
+// import Home from './pages/Home'
+// import About from './pages/About'
  
- const App = () => {
+//  const App = () => {
 
-   return (
-     <div>
-         <Routes>
-    <Route path="/" element={<Home/>} />
-    <Route path="/about" element={<About/>} />
-  </Routes>
-     </div>
-   )
- }
+//    return (
+//      <div>
+//          <Routes>
+//     <Route path="/" element={<Home/>} />
+//     <Route path="/about" element={<About/>} />
+//   </Routes>
+//      </div>
+//    )
+//  }
  
- export default App
+//  export default App
     
+
+// useMemo
+import React, { useMemo, useState } from 'react'
+
+const App = () => {
+  const [count, setCount] = useState(0)
+
+  const result = useMemo(() => {
+    return count * 10
+  }, [count])
+
+  return (
+    <div>
+      <h2>Result: {result}</h2>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+    </div>
+  )
+}
+
+export default App
+
+useCallback
+
