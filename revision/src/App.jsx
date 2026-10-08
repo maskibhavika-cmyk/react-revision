@@ -500,27 +500,41 @@
     
 
 // useMemo
-import React, { useMemo, useState } from 'react'
+// import React, { useMemo, useState } from 'react'
 
-const App = () => {
-  const [count, setCount] = useState(0)
+// const App = () => {
+//   const [count, setCount] = useState(0)
 
-  const result = useMemo(() => {
-    return count * 10
-  }, [count])
+//   const result = useMemo(() => {
+//     return count * 10
+//   }, [count])
 
+//   return (
+//     <div>
+//       <h2>Result: {result}</h2>
+
+//       <button onClick={() => setCount(count + 1)}>
+//         Increase
+//       </button>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// useCallback
+
+
+// lazy loading
+import { lazy, Suspense } from "react";
+
+const About = lazy(() => import("./pages/About"));
+function App() {
   return (
-    <div>
-      <h2>Result: {result}</h2>
-
-      <button onClick={() => setCount(count + 1)}>
-        Increase
-      </button>
-    </div>
-  )
+    <Suspense fallback={<h2>Loading...</h2>}>
+      <About />
+    </Suspense>
+  );
 }
 
-export default App
-
-useCallback
-
+export default App;
