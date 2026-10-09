@@ -668,29 +668,64 @@
 
 // useCallback
 
-import { useState, useCallback } from "react";
+// import { useState, useCallback } from "react";
+
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   const showMessage = useCallback(() => {
+//     console.log("Welcome to JobConnect!");
+//   }, []);
+
+//   return (
+//     <div>
+//       <h2>Count: {count}</h2>
+
+//       <button onClick={() => setCount(count + 1)}>
+//         Increase Count
+//       </button>
+
+//       <button onClick={showMessage}>
+//         Show Message
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// useReducer
+
+import { useReducer } from "react";
+
+function reducer(state, action) {
+  if (action.type === "increase") {
+    return state + 1;
+  }
+
+  if (action.type === "decrease") {
+    return state - 1;
+  }
+
+  return state;
+}
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const showMessage = useCallback(() => {
-    console.log("Welcome to JobConnect!");
-  }, []);
+  const [count, dispatch] = useReducer(reducer, 0);
 
   return (
     <div>
       <h2>Count: {count}</h2>
 
-      <button onClick={() => setCount(count + 1)}>
-        Increase Count
+      <button onClick={() => dispatch({ type: "increase" })}>
+        Increase
       </button>
 
-      <button onClick={showMessage}>
-        Show Message
+      <button onClick={() => dispatch({ type: "decrease" })}>
+        Decrease
       </button>
     </div>
   );
 }
 
 export default App;
-
