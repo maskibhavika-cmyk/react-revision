@@ -733,20 +733,40 @@
 
 // useContext
 
-import { useContext } from "react";
-import { UserContext } from "./context/UserContext";
+// import { useContext } from "react";
+// import { UserContext } from "./context/UserContext";
 
-function Navbar() {
-  const user = useContext(UserContext);
+// function Navbar() {
+//   const user = useContext(UserContext);
 
-  return <h2>Welcome, {user}</h2>;
-}
+//   return <h2>Welcome, {user}</h2>;
+// }
+
+// function App() {
+//   return (
+//     <UserContext.Provider value="Rahul">
+//       <Navbar />
+//     </UserContext.Provider>
+//   );
+// }
+
+// export default App;
+
+// custom hook
+
+import useCounter from "./hooks/useCounter";
 
 function App() {
+  const { count, increase } = useCounter();
+
   return (
-    <UserContext.Provider value="Rahul">
-      <Navbar />
-    </UserContext.Provider>
+    <div>
+      <h2>Count: {count}</h2>
+
+      <button onClick={increase}>
+        Increase
+      </button>
+    </div>
   );
 }
 
