@@ -526,15 +526,46 @@
 
 
 // lazy loading
-import { lazy, Suspense } from "react";
+// import { lazy, Suspense } from "react";
 
-const About = lazy(() => import("./pages/About"));
-function App() {
+// const About = lazy(() => import("./pages/About"));
+// function App() {
+//   return (
+//     <Suspense fallback={<h2>Loading...</h2>}>
+//       <About />
+//     </Suspense>
+//   );
+// }
+
+// export default App;
+
+
+// example 2
+// import { lazy, Suspense } from "react";
+
+// const About = lazy(() => import("./pages/About"));
+
+// function App() {
+//   return (
+//     <Suspense fallback={<h2>Loading...</h2>}>
+//       <About />
+//     </Suspense>
+//   );
+// }
+
+// export default App;
+
+
+// Jsx
+import React from 'react'
+
+const App = () => {
   return (
-    <Suspense fallback={<h2>Loading...</h2>}>
-      <About />
-    </Suspense>
-  );
+    <div>
+      <h1>My react Practice</h1>
+      <p>I am learning react</p>
+    </div>
+  )
 }
 
-export default App;
+export default App
