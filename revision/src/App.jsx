@@ -754,17 +754,41 @@
 
 // custom hook
 
-import useCounter from "./hooks/useCounter";
+// import useCounter from "./hooks/useCounter";
+
+// function App() {
+//   const { count, increase } = useCounter();
+
+//   return (
+//     <div>
+//       <h2>Count: {count}</h2>
+
+//       <button onClick={increase}>
+//         Increase
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// conditional rendering
+
+import { useState } from "react";
 
 function App() {
-  const { count, increase } = useCounter();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <div>
-      <h2>Count: {count}</h2>
+      {isLoggedIn ? (
+        <h2>Welcome User!</h2>
+      ) : (
+        <h2>Please Login</h2>
+      )}
 
-      <button onClick={increase}>
-        Increase
+      <button onClick={() => setIsLoggedIn(!isLoggedIn)}>
+        {isLoggedIn ? "Logout" : "Login"}
       </button>
     </div>
   );
