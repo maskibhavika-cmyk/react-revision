@@ -572,15 +572,35 @@
 
 // component 
 
-function Navbar() {
-  return <h2>JobConnect Navbar</h2>;
-}
+// function Navbar() {
+//   return <h2>JobConnect Navbar</h2>;
+// }
+
+// function App() {
+//   return (
+//     <div>
+//       <Navbar />
+//       <h1>Welcome to JobConnect</h1>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// useState
+
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <div>
-      <Navbar />
-      <h1>Welcome to JobConnect</h1>
+      <h2>Count: {count}</h2>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
     </div>
   );
 }
