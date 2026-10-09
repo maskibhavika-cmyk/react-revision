@@ -609,21 +609,84 @@
  
 // useRef
 
-import { useRef } from "react";
+// import { useRef } from "react";
+
+// function App() {
+//   const inputRef = useRef(null);
+
+//   function handleClick() {
+//     inputRef.current.focus();
+//   }
+
+//   return (
+//     <div>
+//       <input ref={inputRef} placeholder="Enter your name" />
+
+//       <button onClick={handleClick}>
+//         Focus Input
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// useMemo
+
+// import { useMemo, useState } from "react";
+
+// function App() {
+//   const [number, setNumber] = useState(2);
+//   const [count, setCount] = useState(0);
+
+//   const square = useMemo(() => {
+//     console.log("Calculating square...");
+//     return number * number;
+//   }, [number]);
+
+//   return (
+//     <div>
+//       <h2>Number: {number}</h2>
+//       <h2>Square: {square}</h2>
+
+//       <button onClick={() => setNumber(number + 1)}>
+//         Change Number
+//       </button>
+
+//       <hr />
+
+//       <h2>Count: {count}</h2>
+//       <button onClick={() => setCount(count + 1)}>
+//         Increase Count
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+// useCallback
+
+import { useState, useCallback } from "react";
 
 function App() {
-  const inputRef = useRef(null);
+  const [count, setCount] = useState(0);
 
-  function handleClick() {
-    inputRef.current.focus();
-  }
+  const showMessage = useCallback(() => {
+    console.log("Welcome to JobConnect!");
+  }, []);
 
   return (
     <div>
-      <input ref={inputRef} placeholder="Enter your name" />
+      <h2>Count: {count}</h2>
 
-      <button onClick={handleClick}>
-        Focus Input
+      <button onClick={() => setCount(count + 1)}>
+        Increase Count
+      </button>
+
+      <button onClick={showMessage}>
+        Show Message
       </button>
     </div>
   );
