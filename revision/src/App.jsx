@@ -696,35 +696,57 @@
 
 // useReducer
 
-import { useReducer } from "react";
+// import { useReducer } from "react";
 
-function reducer(state, action) {
-  if (action.type === "increase") {
-    return state + 1;
-  }
+// function reducer(state, action) {
+//   if (action.type === "increase") {
+//     return state + 1;
+//   }
 
-  if (action.type === "decrease") {
-    return state - 1;
-  }
+//   if (action.type === "decrease") {
+//     return state - 1;
+//   }
 
-  return state;
+//   return state;
+// }
+
+// function App() {
+//   const [count, dispatch] = useReducer(reducer, 0);
+
+//   return (
+//     <div>
+//       <h2>Count: {count}</h2>
+
+//       <button onClick={() => dispatch({ type: "increase" })}>
+//         Increase
+//       </button>
+
+//       <button onClick={() => dispatch({ type: "decrease" })}>
+//         Decrease
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+// useContext
+
+import { useContext } from "react";
+import { UserContext } from "./context/UserContext";
+
+function Navbar() {
+  const user = useContext(UserContext);
+
+  return <h2>Welcome, {user}</h2>;
 }
 
 function App() {
-  const [count, dispatch] = useReducer(reducer, 0);
-
   return (
-    <div>
-      <h2>Count: {count}</h2>
-
-      <button onClick={() => dispatch({ type: "increase" })}>
-        Increase
-      </button>
-
-      <button onClick={() => dispatch({ type: "decrease" })}>
-        Decrease
-      </button>
-    </div>
+    <UserContext.Provider value="Rahul">
+      <Navbar />
+    </UserContext.Provider>
   );
 }
 
