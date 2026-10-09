@@ -557,15 +557,32 @@
 
 
 // Jsx
-import React from 'react'
+// import React from 'react'
 
-const App = () => {
-  return (
-    <div>
-      <h1>My react Practice</h1>
-      <p>I am learning react</p>
-    </div>
-  )
+// const App = () => {
+//   return (
+//     <div>
+//       <h1>My react Practice</h1>
+//       <p>I am learning react</p>
+//     </div>
+//   )
+// }
+
+// export default App
+
+// component 
+
+function Navbar() {
+  return <h2>JobConnect Navbar</h2>;
 }
 
-export default App
+function App() {
+  return (
+    <div>
+      <Navbar />
+      <h1>Welcome to JobConnect</h1>
+    </div>
+  );
+}
+
+export default App;
