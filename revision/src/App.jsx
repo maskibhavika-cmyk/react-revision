@@ -589,20 +589,45 @@
 
 // useState
 
-import { useState } from "react";
+// import { useState } from "react";
+
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   return (
+//     <div>
+//       <h2>Count: {count}</h2>
+
+//       <button onClick={() => setCount(count + 1)}>
+//         Increase
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;
+ 
+// useRef
+
+import { useRef } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const inputRef = useRef(null);
+
+  function handleClick() {
+    inputRef.current.focus();
+  }
 
   return (
     <div>
-      <h2>Count: {count}</h2>
+      <input ref={inputRef} placeholder="Enter your name" />
 
-      <button onClick={() => setCount(count + 1)}>
-        Increase
+      <button onClick={handleClick}>
+        Focus Input
       </button>
     </div>
   );
 }
 
 export default App;
+
